@@ -1,6 +1,6 @@
 # ELK
 
-Simple instance of an ELK setup running on Rocky Linux.
+Simple instance of an ELK running on Rocky Linux. Uses Metricbeat to display the metrics of the localhost in Kibana. 
 
 # Setup
 
