@@ -24,3 +24,6 @@
   service:
    name: kibana
    state: started
+
+- name: Running metricbeat setup --dashboards
+  shell: metricbeat setup --dashboards
