@@ -1,0 +1,18 @@
+---
+# tasks file for metricbeat
+
+- name: Installing metricbeat
+  package:
+   name: metricbeat
+   state: latest
+
+- name: Copying in metricbeat configuration file
+  template:
+   src: metricbeat.yml
+   dest: /etc/metricbeat
+  notify: restart-metricbeat
+ 
+- name: Starting metricbeat
+  service: 
+   name: metricbeat
+   state: started
