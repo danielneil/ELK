@@ -8,16 +8,15 @@
   roles:
    - common
 
-- name: Installing ELK-Sankey Platform (Elasticsearch server instance)
+- name: Installing Elasticsearch server instance
   hosts: elasticsearch-server
   gather_facts: yes
   become: true
 
   roles:
    - elasticsearch
-   - data-generation
-
-- name: Installing ELK-Sankey Platform (kibana - resides on the elasticsearch server)
+   
+- name: Installing kibana
   hosts: kibana-server
   gather_facts: yes
   become: true
