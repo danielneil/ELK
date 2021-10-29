@@ -8,6 +8,14 @@
   roles:
    - common
 
+- name: Installing metricbeat instance
+  hosts: metricbeat-server
+  gather_facts: yes
+  become: true
+
+  roles:
+   - metricbeat
+
 - name: Installing Elasticsearch server instance
   hosts: elasticsearch-server
   gather_facts: yes
