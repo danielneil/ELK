@@ -1,0 +1,27 @@
+---
+# tasks file for elasticsearch
+
+- name: Installing elasticsearch
+  package:
+   name: elasticsearch 
+   state: latest
+
+- name: Opening up the firewall for kibana 
+  firewalld:
+   zone: public
+   port: 9200/tcp
+   permanent: true
+   state: enabled
+   immediate: true
+  become: yes
+
+- name: Copying in elasticsearch configuration file
+  template:
+   src: elasticsearch.yml
+   dest: /etc/elasticsearch
+  notify: restart-elasticsearch
+ 
+- name: Starting elasticsearch
+  service: 
+   name: elasticsearch
+   state: started
