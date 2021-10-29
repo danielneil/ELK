@@ -4,5 +4,5 @@ elasticsearch-server ansible_host=127.0.0.1
 [kibana]
 kibana-server ansible_host=127.0.0.1
 
-[filebeat]
-filebeat-server ansible_host=127.0.0.1
+[metricbeat]
+metricbeat-server ansible_host=127.0.0.1
